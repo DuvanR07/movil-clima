@@ -9,6 +9,7 @@ import 'package:clima/views/search_delegate.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/date_symbol_data_local.dart';
 
+
 class Ubicacion extends StatefulWidget {
   @override
   _UbicacionState createState() => new _UbicacionState();
@@ -146,21 +147,14 @@ class _UbicacionState extends State<Ubicacion> {
                   image: NetworkImage(
                     "https://openweathermap.org/img/wn/11d@2x.png",
                   ),
-                  placeholder: NetworkImage(
-                      "http://www.legjobbajanlat.hu/img/69996/7090022000_3/200x200,r/7090022000_3.jpg?time=1558042900"),
+                  placeholder: AssetImage(
+                      "assets/img/loader.gif"),
                   fit: BoxFit.cover,
                 ),
                 height: 40.0,
-                // decoration: BoxDecoration(
-                //   border: Border.all()
-
-                // )
               ),
 
-              // Icon(
-              //   FontAwesomeIcons.cloudSun,
-              //   size: 20.0,
-              // ),
+      
               Text(
                 "${clima.temp}º",
                 style: TextStyle(fontSize: 20.0, color: Colors.black54),

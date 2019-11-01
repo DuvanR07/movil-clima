@@ -1,6 +1,6 @@
 # clima
 
-A new Flutter application.
+Aplicación desarrollada con fines educativos, donde se implementan las practicas mas usadas para tener en cuenta en el desarrollo movil.
 
 ## Getting Started
 
