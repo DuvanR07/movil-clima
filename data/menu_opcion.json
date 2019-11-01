@@ -1,0 +1,15 @@
+{
+    "nombreApp": "Clima",
+    "opciones": [{
+            "ruta": "ubicacion",
+            "icon": "settings",
+            "texto": "Ubicación"
+        },
+        {
+            "ruta": "ajustes",
+            "icon": "location_on",
+            "texto": "Ajustes"
+        }
+
+    ]
+}
