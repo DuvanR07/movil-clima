@@ -36,7 +36,7 @@ class Clima {
   String humidity;
   String temp_max;
   String temp_min;
-  var weathers;
+  String weathers;
   String wind;
 
   Clima(
@@ -65,7 +65,7 @@ class Clima {
     humidity   = clima['humidity'].toString();
     temp_max   = clima['temp_max'].toString();
     temp_min   = clima['temp_min'].toString();
-   // weathers   = json.decode(clima['weather']);
+    weathers   = clima['weather'];
     wind       = clima['wind'];
   }
 

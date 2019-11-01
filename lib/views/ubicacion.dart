@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:clima/models/clima_model.dart';
 import 'package:clima/models/item_menu_model.dart';
 import 'package:clima/providers/menu_provider.dart';
@@ -113,10 +115,14 @@ class _UbicacionState extends State<Ubicacion> {
   }
 
   Widget _item(Ciudad data) {
+  //  print(data.clima);
     Clima clima = new Clima();
     clima = Clima.jsonToObjet(data.clima);
     var fecha = new DateTime.fromMillisecondsSinceEpoch(int.parse(data.fecha));
     var formatter = new DateFormat("EEE d 'de' MMMM yyyy hh:mm aaa ");
+    //final weather =json.decode(clima.weathers);
+    print(clima.weathers);
+
     return ListTile(
       title: new Row(
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -125,7 +131,7 @@ class _UbicacionState extends State<Ubicacion> {
             Icons.location_on,
             size: 15.0,
           ),
-          Text(data.nombre),
+          Text(data.nombre +'${clima.weathers}'),
         ],
       ),
       subtitle: Column(
@@ -145,10 +151,10 @@ class _UbicacionState extends State<Ubicacion> {
               Container(
                 child: FadeInImage(
                   image: NetworkImage(
-                    "https://openweathermap.org/img/wn/11d@2x.png",
+                    "https://openweathermap.org/img/wn/09n@2x.png",
                   ),
                   placeholder: AssetImage(
-                      "assets/img/loader.gif"),
+                      'assets/img/loader.gif'),
                   fit: BoxFit.cover,
                 ),
                 height: 40.0,
