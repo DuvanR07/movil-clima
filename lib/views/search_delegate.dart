@@ -116,7 +116,6 @@ class DataSearch extends SearchDelegate<String> {
       final climaProvider = new ClimaProvider();
       final clima = await climaProvider.getClima(ciudad.lat, ciudad.lon);
       ciudad.addClima(clima);
-      print("DVN: " + ciudad.clima);
       guardarCiudad(context, ciudad);
     }
   }

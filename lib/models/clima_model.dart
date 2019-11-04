@@ -48,14 +48,14 @@ class Clima {
       this.weathers,
       this.wind});
 
-  Clima.fromJsonMap(Map<String, dynamic> json) {
-    temp       = json['main']['temp'].toString();
-    pressure   = json['main']['pressure'].toString();
-    humidity   = json['main']['humidity'].toString();
-    temp_max   = json['main']['temp_max'].toString();
-    temp_min   = json['main']['temp_min'].toString();
-    weathers   = json['weather'];
-    wind       = json['wind']['speed'].toString();
+  Clima.fromJsonMap(Map<String, dynamic> data) {
+    temp       = data['main']['temp'].toString();
+    pressure   = data['main']['pressure'].toString();
+    humidity   = data['main']['humidity'].toString();
+    temp_max   = data['main']['temp_max'].toString();
+    temp_min   = data['main']['temp_min'].toString();
+    weathers   = json.encode(data['weather']); // es el nombre de la propiedad del json que viene desde internet
+    wind       = data['wind']['speed'].toString();
   }
 
     Clima.jsonToObjet(String data) {
@@ -65,7 +65,7 @@ class Clima {
     humidity   = clima['humidity'].toString();
     temp_max   = clima['temp_max'].toString();
     temp_min   = clima['temp_min'].toString();
-    weathers   = clima['weather'];
+    weathers   = clima['weathers'].toString();
     wind       = clima['wind'];
   }
 

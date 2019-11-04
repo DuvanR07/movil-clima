@@ -120,8 +120,9 @@ class _UbicacionState extends State<Ubicacion> {
     clima = Clima.jsonToObjet(data.clima);
     var fecha = new DateTime.fromMillisecondsSinceEpoch(int.parse(data.fecha));
     var formatter = new DateFormat("EEE d 'de' MMMM yyyy hh:mm aaa ");
-    //final weather =json.decode(clima.weathers);
-    print(clima.weathers);
+    final weathers = Weathers.fromJsonList(json.decode(clima.weathers));
+    final weat = weathers.items[0];
+   // print(weathers.items);
 
     return ListTile(
       title: new Row(
@@ -131,7 +132,7 @@ class _UbicacionState extends State<Ubicacion> {
             Icons.location_on,
             size: 15.0,
           ),
-          Text(data.nombre +'${clima.weathers}'),
+          Text(data.nombre),
         ],
       ),
       subtitle: Column(
@@ -151,7 +152,7 @@ class _UbicacionState extends State<Ubicacion> {
               Container(
                 child: FadeInImage(
                   image: NetworkImage(
-                    "https://openweathermap.org/img/wn/09n@2x.png",
+                    "https://openweathermap.org/img/wn/${weat.icon}@2x.png",
                   ),
                   placeholder: AssetImage(
                       'assets/img/loader.gif'),

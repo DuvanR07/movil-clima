@@ -58,7 +58,6 @@ class Ciudad {
   void addClima(Clima clima) {
     this.clima = json.encode(clima.toJSON());
     this.fecha = DateTime.now().millisecondsSinceEpoch.toString();
- 
   }
 
   Map<String, dynamic> toMap() {

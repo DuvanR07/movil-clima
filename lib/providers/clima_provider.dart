@@ -19,6 +19,7 @@ class ClimaProvider {
     });
 
     final resp = await http.get(url);
+    print("recibiendo la data: "+resp.body);
     final decodeData = json.decode(resp.body);
     final dataClima = new Clima.fromJsonMap(decodeData);
     return dataClima;
