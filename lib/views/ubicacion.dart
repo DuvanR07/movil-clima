@@ -26,8 +26,6 @@ class _UbicacionState extends State<Ubicacion> {
     super.initState();
     initializeDateFormatting('es_ES', null); //util para la fecha en español
     print(menuProvider.opciones);
-
-    // _lista();
   }
 
   @override
@@ -59,7 +57,10 @@ class _UbicacionState extends State<Ubicacion> {
         elevation: 1.0,
       ),
     );
+
   }
+
+  //METODOS 
 
   Widget _lista() {
     return FutureBuilder(
@@ -92,10 +93,7 @@ class _UbicacionState extends State<Ubicacion> {
                   children: <Widget>[
                     Container(
                       child: _item(data[index]),
-                      //  alignment: AlignmentDirectional.bottomCenter,
-                      // margin: EdgeInsets.all(10.0),
                       padding: EdgeInsets.all(10.0),
-
                       decoration: BoxDecoration(color: Colors.grey[350]),
                     ),
                     Divider(
@@ -115,15 +113,12 @@ class _UbicacionState extends State<Ubicacion> {
   }
 
   Widget _item(Ciudad data) {
-  //  print(data.clima);
     Clima clima = new Clima();
     clima = Clima.jsonToObjet(data.clima);
     var fecha = new DateTime.fromMillisecondsSinceEpoch(int.parse(data.fecha));
     var formatter = new DateFormat("EEE d 'de' MMMM yyyy hh:mm aaa ");
     final weathers = Weathers.fromJsonList(json.decode(clima.weathers));
     final weat = weathers.items[0];
-   // print(weathers.items);
-
     return ListTile(
       title: new Row(
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -160,8 +155,6 @@ class _UbicacionState extends State<Ubicacion> {
                 ),
                 height: 40.0,
               ),
-
-      
               Text(
                 "${clima.temp}º",
                 style: TextStyle(fontSize: 20.0, color: Colors.black54),
