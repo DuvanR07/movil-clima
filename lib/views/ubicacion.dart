@@ -127,7 +127,8 @@ class _UbicacionState extends State<Ubicacion> {
             Icons.location_on,
             size: 15.0,
           ),
-          Text(data.nombre),
+          Flexible (child: Text(data.nombre, overflow: TextOverflow.fade),)
+     
         ],
       ),
       subtitle: Column(
